@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_color"
+    android:orientation="vertical"
+    android:paddingHorizontal="10dp"
+    android:paddingTop="40dp"
+    android:paddingBottom="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Trip Name"
+        android:textColor="@color/primary_color"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/text_trip_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:hint="Enter trip name here ..."
+        android:textColor="@color/black_color"
+        android:textColorHint="@color/black_color"
+        android:backgroundTint="@color/black_color"
+        android:textSize="15dp"
+        android:singleLine="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10px"
+            android:layout_weight="1"
+            android:text="Destination"
+            android:textColor="@color/primary_color"
+            android:textSize="15dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10px"
+            android:layout_weight="1"
+            android:text="Date"
+            android:textColor="@color/primary_color"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <EditText
+            android:id="@+id/text_destination"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10px"
+            android:layout_weight="1"
+            android:hint="Enter destination here ..."
+            android:textColor="@color/black_color"
+            android:textColorHint="@color/black_color"
+            android:backgroundTint="@color/black_color"
+            android:textSize="15dp"
+            android:singleLine="true"/>
+
+        <EditText
+            android:id="@+id/text_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10px"
+            android:layout_weight="1"
+            android:hint="dd/MM/yyyy"
+            android:textColor="@color/black_color"
+            android:textColorHint="@color/black_color"
+            android:backgroundTint="@color/black_color"
+            android:textSize="15dp"
+            android:singleLine="true"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:textColor="@color/primary_color"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/text_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:hint="Enter description here ..."
+        android:textColor="@color/black_color"
+        android:textColorHint="@color/black_color"
+        android:backgroundTint="@color/black_color"
+        android:textSize="15dp"
+        android:singleLine="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Location"
+        android:textColor="@color/primary_color"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/text_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:hint="Enter location here ..."
+        android:textColor="@color/black_color"
+        android:textColorHint="@color/black_color"
+        android:backgroundTint="@color/black_color"
+        android:textSize="15dp"
+        android:singleLine="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status"
+        android:textColor="@color/primary_color"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/text_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:hint="Enter status here ..."
+        android:textColor="@color/black_color"
+        android:textColorHint="@color/black_color"
+        android:backgroundTint="@color/black_color"
+        android:textSize="15dp"
+        android:singleLine="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Required Risk Assessment"
+        android:textColor="@color/primary_color"
+        android:textSize="15dp" />
+
+    <Switch
+        android:id="@+id/switch_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:thumb="@drawable/thumb"
+        android:track="@drawable/switch_btn" />
+
+    <Button
+        android:id="@+id/btn_create"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create Trip"
+        android:textAllCaps="false"
+        android:textColor="@color/white_color"
+        android:textSize="15dp" />
+
+</LinearLayout>

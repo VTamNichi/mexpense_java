@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_color">#FF4F9068</color>
+    <color name="white_color">#FFF3F3F3</color>
+    <color name="black_color">#FF333333</color>
+    <color name="white_menu_color">#FFF6F6F6</color>
+    <color name="white_max_color">#FFFFFFFF</color>
+    <color name="brown_color">#FF714D33</color>
+    <color name="grey_color">#FFDDDDDD</color>
+    <color name="grey_end_color">#FF808080</color>
+    <color name="blue_color">#FF3388CC</color>
+    <color name="orange_color">#FFeF9175</color>
+</resources>

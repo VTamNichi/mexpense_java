@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_color"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20px"
+        android:text="M-EXPENSE"
+        android:textColor="@color/black_color"
+        android:textSize="80px"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="40mm"
+        android:src="@drawable/boyscout_logo"
+        android:paddingBottom="24dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60px"
+        android:text="Contact"
+        android:textColor="@color/black_color"
+        android:textSize="70px"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10px"
+        android:text="Author"
+        android:textColor="@color/black_color"
+        android:textSize="40px"/>
+
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80px"
+        android:text=""
+        android:textColor="@color/black_color"
+        android:textSize="45px"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10px"
+        android:text="Email"
+        android:textColor="@color/black_color"
+        android:textSize="40px"/>
+
+    <TextView
+        android:id="@+id/user_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80px"
+        android:text=""
+        android:textColorLink="@color/blue_color"
+        android:textSize="45px"
+        android:textStyle="bold"
+        android:autoLink="email"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10px"
+        android:text="Phone"
+        android:textColor="@color/black_color"
+        android:textSize="40px"/>
+
+    <TextView
+        android:id="@+id/user_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80px"
+        android:text=""
+        android:textSize="45px"
+        android:textColorLink="@color/blue_color"
+        android:textStyle="bold"
+        android:autoLink="phone"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10px"
+        android:text="Copyright © 2022 Serco Honan. All rights reserved."
+        android:textColor="@color/black_color"
+        android:textSize="40px"
+        android:textStyle="italic"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10px"
+        android:text="Create your own application for the courseworks."
+        android:textColor="@color/black_color"
+        android:textSize="40px"
+        android:textStyle="italic"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10px"
+        android:text="I know my codes so well. Be careful !!!"
+        android:textColor="@color/black_color"
+        android:textSize="40px"
+        android:textStyle="bold|italic"/>
+
+</LinearLayout>

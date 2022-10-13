@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/expense_date_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/white_color"
+        android:textSize="15dp"
+        android:background="@drawable/border_primary"
+        android:gravity="center"
+        android:padding="10dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_list_view_expense"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingVertical="15dp"
+        android:weightSum="100"
+        android:gravity="center_vertical">
+        <TextView
+            android:id="@+id/expense_type_list_view"
+            android:layout_weight="80"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/black_color"
+            android:textSize="15dp"/>
+        <TextView
+            android:id="@+id/expense_time_list_view"
+            android:layout_weight="20"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/black_color"
+            android:textSize="15dp"/>
+    </LinearLayout>
+
+</LinearLayout>
