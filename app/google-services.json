@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "661855702570",
+    "project_id": "mexpense-ddbfc",
+    "storage_bucket": "mexpense-ddbfc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:661855702570:android:0222bde4ccee23c42bbd53",
+        "android_client_info": {
+          "package_name": "com.hieplh.mexpense"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "661855702570-4gfdmqldhjd88h9eu55gve0h8emulbae.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hieplh.mexpense",
+            "certificate_hash": "8190b1fb94fb75ee809101dfaab5c95a91310af6"
+          }
+        },
+        {
+          "client_id": "661855702570-gblva0e8a11lrsuhjpoiikl5aqe6dqu7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPITFGFXXm2ZkIxBeycociTrI530W9qrI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "661855702570-gblva0e8a11lrsuhjpoiikl5aqe6dqu7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

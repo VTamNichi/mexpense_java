@@ -6,6 +6,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.hieplh.mexpense.dtos.Expense;
 import com.hieplh.mexpense.dtos.Trip;
 import com.hieplh.mexpense.utils.DBConnection;
 
@@ -52,10 +53,23 @@ public class TripDAO {
         return get(sql, "%" + tripName + "%", "%" + destination + "%", "%" + tripDate + "%");
     }
 
+    public List<Trip> getAllTrip() {
+        String sql = "SELECT * FROM Trip";
+        return get(sql);
+    }
+
     public Trip getTripById(int id) {
         String sql = "SELECT * FROM Trip WHERE id = ?";
         List<Trip> listTrip = get(sql, String.valueOf(id));
         return listTrip.get(0);
+    }
+
+    public int getLastId() {
+        String sql = "SELECT MAX(id) FROM Trip";
+        String args[] = {};
+        Cursor cursor = db.rawQuery(sql, args);
+        cursor.moveToFirst();
+        return cursor.getInt(0);
     }
 
     public long insert(Trip trip) {

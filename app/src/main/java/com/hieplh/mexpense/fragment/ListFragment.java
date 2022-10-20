@@ -15,6 +15,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.hieplh.mexpense.R;
 import com.hieplh.mexpense.adapter.ListViewBaseAdapter;
 import com.hieplh.mexpense.daos.TripDAO;
@@ -47,7 +52,6 @@ public class ListFragment extends Fragment {
         Bundle bundle = new Bundle();
 
         TripDAO tripDAO = new TripDAO(view.getContext());
-
         List<Trip> listTrip = tripDAO.getListTrip(tripName, destination, tripDate, location, status, textFilter);
 
         LinearLayout ll = view.findViewById(R.id.no_list_view);

@@ -1,6 +1,7 @@
 package com.hieplh.mexpense;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -38,6 +39,11 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.hieplh.mexpense.daos.ExpenseDAO;
 import com.hieplh.mexpense.daos.TripDAO;
 import com.hieplh.mexpense.daos.UserDAO;
@@ -51,6 +57,7 @@ import com.hieplh.mexpense.fragment.ListFragment;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -69,6 +76,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private int width = 0;
     UserDAO userDAO = new UserDAO();
+
+    FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,7 +128,34 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             navigationView.getMenu().findItem(R.id.menu_list).setChecked(true);
             mBottomNavigationView.getMenu().findItem(R.id.menu_list).setChecked(true);
         });
+        TripDAO tripDAO = new TripDAO(this);
+        ExpenseDAO expenseDAO = new ExpenseDAO(this);
+        DatabaseReference databaseReference = firebaseDatabase.getReference("trips");
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    Trip trip = dataSnapshot.getValue(Trip.class);
+                    try {
+                        tripDAO.insert(trip);
+                        try {
+                            for (Expense expense : trip.getListExpense()) {
+                                expense.setTripId(tripDAO.getLastId());
+                                expenseDAO.insert(expense);
+                            }
+                            List<Expense> listExpense = expenseDAO.getListExpense(trip.getId());
+                        } catch (Exception e) {
+                        }
+                    } catch (Exception e) {
 
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                showToast("Cannot get data from firebase");
+            }
+        });
         getSupportFragmentManager().setFragmentResultListener("101", this, (requestKey, result) -> {
             switch (result.getString("1")) {
                 case "new_trip":
@@ -141,14 +177,73 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     mBottomNavigationView.getMenu().findItem(R.id.menu_about).setChecked(true);
                     break;
                 case "reset":
-                    TripDAO tripDAO = new TripDAO(this);
                     tripDAO.deleteAll();
-                    ExpenseDAO expenseDAO = new ExpenseDAO(this);
                     expenseDAO.deleteAll();
+                    databaseReference.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                                Trip trip = dataSnapshot.getValue(Trip.class);
+                                try {
+                                    tripDAO.insert(trip);
+                                    try {
+                                        for (Expense expense : trip.getListExpense()) {
+                                            expense.setTripId(tripDAO.getLastId());
+                                            expenseDAO.insert(expense);
+                                        }
+                                        List<Expense> listExpense = expenseDAO.getListExpense(trip.getId());
+                                    } catch (Exception e) {
+                                    }
+                                } catch (Exception e) {
+
+                                }
+                            }
+                        }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                            showToast("Cannot get data from firebase");
+                        }
+                    });
                     showToast("Reset successfully");
                     break;
                 case "backup":
-                    showToast("Backup to cloud successfully");
+                    List<Trip> listTrip = tripDAO.getAllTrip();
+                    for (Trip trip : listTrip) {
+                        List<Expense> listExpense = expenseDAO.getListExpense(trip.getId());
+                        trip.setListExpense(listExpense);
+                    }
+                    if(listTrip.size() > 0) {
+                        databaseReference.setValue(listTrip, (error, ref) -> {
+                            tripDAO.deleteAll();
+                            expenseDAO.deleteAll();
+                            databaseReference.addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                    for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                                        Trip trip = dataSnapshot.getValue(Trip.class);
+                                        try {
+                                            tripDAO.insert(trip);
+                                            try {
+                                                for (Expense expense : trip.getListExpense()) {
+                                                    expense.setTripId(tripDAO.getLastId());
+                                                    expenseDAO.insert(expense);
+                                                }
+                                                List<Expense> listExpense = expenseDAO.getListExpense(trip.getId());
+                                            } catch (Exception e) {
+                                            }
+                                        } catch (Exception e) {
+
+                                        }
+                                    }
+                                }
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error) {
+                                    showToast("Cannot get data from firebase");
+                                }
+                            });
+                            showToast("Backup to cloud successfully");
+                        });
+                    }
                     break;
             }
         });

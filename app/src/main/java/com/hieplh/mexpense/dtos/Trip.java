@@ -1,5 +1,7 @@
 package com.hieplh.mexpense.dtos;
 
+import java.util.List;
+
 public class Trip {
     private int id;
     private String tripName;
@@ -9,6 +11,7 @@ public class Trip {
     private int riskAssessment;
     private String location;
     private String status;
+    private List<Expense> listExpense;
 
     public Trip() {
     }
@@ -22,6 +25,18 @@ public class Trip {
         this.riskAssessment = riskAssessment;
         this.location = location;
         this.status = status;
+    }
+
+    public Trip(int id, String tripName, String destination, String tripDate, String description, int riskAssessment, String location, String status, List<Expense> listExpense) {
+        this.id = id;
+        this.tripName = tripName;
+        this.destination = destination;
+        this.tripDate = tripDate;
+        this.description = description;
+        this.riskAssessment = riskAssessment;
+        this.location = location;
+        this.status = status;
+        this.listExpense = listExpense;
     }
 
     public int getId() {
@@ -86,6 +101,14 @@ public class Trip {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public List<Expense> getListExpense() {
+        return listExpense;
+    }
+
+    public void setListExpense(List<Expense> listExpense) {
+        this.listExpense = listExpense;
     }
 
     @Override
