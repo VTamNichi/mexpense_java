@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private DrawerLayout mDrawerLayout;
     private BottomNavigationView mBottomNavigationView;
     private NavigationView navigationView;
+    Toolbar toolbar;
 
     private int width = 0;
     UserDAO userDAO = new UserDAO();
@@ -85,9 +86,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setTitle("");
+        toolbar.setTitle("Home");
 
         Toolbar toolbar_detail = findViewById(R.id.toolbar_detail);
         setSupportActionBar(toolbar_detail);
@@ -163,18 +164,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     mCurrentFragment = FRAGMENT_ADD;
                     navigationView.getMenu().findItem(R.id.menu_add).setChecked(true);
                     mBottomNavigationView.getMenu().findItem(R.id.menu_add).setChecked(true);
+                    toolbar.setTitle("Create Trip");
                     break;
                 case "trip_list":
                     replaceFragment(new ListFragment("", "", "", "", "", true));
                     mCurrentFragment = FRAGMENT_LIST;
                     navigationView.getMenu().findItem(R.id.menu_list).setChecked(true);
                     mBottomNavigationView.getMenu().findItem(R.id.menu_list).setChecked(true);
+                    toolbar.setTitle("List Trip");
                     break;
                 case "about":
                     replaceFragment(new AboutFragment());
                     mCurrentFragment = FRAGMENT_ABOUT;
                     navigationView.getMenu().findItem(R.id.menu_about).setChecked(true);
                     mBottomNavigationView.getMenu().findItem(R.id.menu_about).setChecked(true);
+                    toolbar.setTitle("About");
                     break;
                 case "reset":
                     tripDAO.deleteAll();
@@ -771,6 +775,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void replaceFragmetAll(int id) {
         switch (id) {
             case R.id.menu_home:
+                toolbar.setTitle("Home");
                 if(mCurrentFragment != FRAGMENT_HOME) {
                     replaceFragment(new HomeFragment());
                     mCurrentFragment = FRAGMENT_HOME;
@@ -779,6 +784,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
                 break;
             case R.id.menu_add:
+                toolbar.setTitle("Create Trip");
                 if(mCurrentFragment != FRAGMENT_ADD) {
                     replaceFragment(new AddFragment());
                     mCurrentFragment = FRAGMENT_ADD;
@@ -787,6 +793,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
                 break;
             case R.id.menu_list:
+                toolbar.setTitle("List Trip");
                 if(mCurrentFragment != FRAGMENT_LIST || fragment_detail) {
                     replaceFragment(new ListFragment("", "", "", "", "", true));
                     mCurrentFragment = FRAGMENT_LIST;
@@ -795,6 +802,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
                 break;
             case R.id.menu_about:
+                toolbar.setTitle("About");
                 if(mCurrentFragment != FRAGMENT_ABOUT) {
                     replaceFragment(new AboutFragment());
                     mCurrentFragment = FRAGMENT_ABOUT;

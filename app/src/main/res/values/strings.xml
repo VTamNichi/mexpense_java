@@ -13,6 +13,8 @@
     <string-array name="expense_type">
         <item>Travel</item>
         <item>Food</item>
+        <item>Transportation</item>
+        <item>Hotel</item>
         <item>Other</item>
     </string-array>
 </resources>

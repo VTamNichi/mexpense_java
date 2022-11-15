@@ -258,7 +258,8 @@
             android:textAllCaps="false"
             android:textColor="@color/white_color"
             android:textSize="15dp"
-            android:layout_marginLeft="10px"/>
+            android:layout_marginLeft="10px"
+            android:backgroundTint="@color/primary_color"/>
     </LinearLayout>
 
 </LinearLayout>

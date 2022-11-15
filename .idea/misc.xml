@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Project/NativeJava/mexpense/app/src/main/res/drawable/border.xml" value="0.152" />
+        <entry key="..\:/Project/NativeJava/mexpense/app/src/main/res/drawable/border_button.xml" value="0.1" />
         <entry key="..\:/Project/NativeJava/mexpense/app/src/main/res/drawable/border_list_view.xml" value="0.143" />
         <entry key="..\:/Project/NativeJava/mexpense/app/src/main/res/drawable/border_list_view_expense.xml" value="0.136" />
         <entry key="..\:/Project/NativeJava/mexpense/app/src/main/res/drawable/border_primary.xml" value="0.143" />
@@ -29,10 +30,10 @@
         <entry key="..\:/Project/NativeJava/mexpense/app/src/main/res/drawable/switch_btn_yes.xml" value="0.143" />
         <entry key="..\:/Project/NativeJava/mexpense/app/src/main/res/drawable/thumb.xml" value="0.143" />
         <entry key="..\:/Project/NativeJava/mexpense/app/src/main/res/drawable/toast.xml" value="0.143" />
-        <entry key="..\:/Project/NativeJava/mexpense/app/src/main/res/layout/about_fragment.xml" value="0.2" />
-        <entry key="..\:/Project/NativeJava/mexpense/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Project/NativeJava/mexpense/app/src/main/res/layout/about_fragment.xml" value="0.14743589743589744" />
+        <entry key="..\:/Project/NativeJava/mexpense/app/src/main/res/layout/activity_main.xml" value="0.11929824561403508" />
         <entry key="..\:/Project/NativeJava/mexpense/app/src/main/res/layout/add_expense_dialog.xml" value="0.2368659420289855" />
-        <entry key="..\:/Project/NativeJava/mexpense/app/src/main/res/layout/add_fragment.xml" value="0.264" />
+        <entry key="..\:/Project/NativeJava/mexpense/app/src/main/res/layout/add_fragment.xml" value="0.1" />
         <entry key="..\:/Project/NativeJava/mexpense/app/src/main/res/layout/confirm_dialog.xml" value="0.25" />
         <entry key="..\:/Project/NativeJava/mexpense/app/src/main/res/layout/delete_dialog.xml" value="0.2368659420289855" />
         <entry key="..\:/Project/NativeJava/mexpense/app/src/main/res/layout/detail_fragment.xml" value="0.14583333333333334" />

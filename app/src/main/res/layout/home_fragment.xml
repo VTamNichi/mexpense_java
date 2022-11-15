@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -10,120 +11,198 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50px"
-        android:text="Be Creative !!! Please !!!"
-        android:textColor="@color/primary_color"
-        android:textSize="44px"
+        android:layout_marginBottom="20px"
+        android:text="Home Page"
+        android:textColor="@color/black_color"
+        android:textSize="80px"
         android:textStyle="bold" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50px"
-        android:text="Do not follow my application."
-        android:textColor="@color/primary_color"
-        android:textSize="44px"
-        android:textStyle="bold" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="50px"
-        android:text="This is not your destination."
-        android:textColor="@color/primary_color"
-        android:textSize="44px"
-        android:textStyle="bold" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="50px"
-        android:text="This is just a guide for your exploration."
+        android:text="Select Activity"
         android:textColor="@color/primary_color"
         android:textSize="44px"
         android:textStyle="bold" />
 
-    <LinearLayout
+    <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="3"
-        android:gravity="center"
-        android:layout_marginTop="100px">
-        <androidx.appcompat.widget.AppCompatButton
+        android:alignmentMode="alignMargins"
+        android:columnOrderPreserved="true"
+        android:rowCount="3"
+        android:columnCount="2"
+        android:layout_gravity="center">
+        <androidx.cardview.widget.CardView
             android:id="@+id/new_trip_btn"
-            android:layout_weight="1"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:paddingVertical="40px"
-            android:background="@drawable/border"
-            android:orientation="vertical"
-            android:gravity="center_horizontal"
-            android:text="@string/new_trip"
-            android:theme="@style/ThemeOverlay.AppCompat.Light"
-            android:drawableTop="@drawable/ic_add"
-            android:textAllCaps="false"/>
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/trip_list_btn"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:paddingVertical="40px"
-            android:background="@drawable/border"
-            android:orientation="vertical"
-            android:gravity="center_horizontal"
-            android:text="@string/trip_list"
-            android:theme="@style/ThemeOverlay.AppCompat.Light"
-            android:drawableTop="@drawable/ic_apps"
-            android:textAllCaps="false"/>
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/about_btn"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:paddingVertical="40px"
-            android:background="@drawable/border"
-            android:orientation="vertical"
-            android:gravity="center_horizontal"
-            android:text="@string/about"
-            android:theme="@style/ThemeOverlay.AppCompat.Light"
-            android:drawableTop="@drawable/ic_info"
-            android:textAllCaps="false"/>
-    </LinearLayout>
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/white_color"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp"
+                >
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/ic_add_new"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="New Trip"
+                    android:textSize="18sp"
+                    android:textColor="@color/black_color"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-    <LinearLayout
+        <androidx.cardview.widget.CardView
+            android:id="@+id/trip_list_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/white_color"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/ic_list"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Trip List"
+                    android:textSize="18sp"
+                    android:textColor="@color/black_color"/>
+                />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/about_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/white_color"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/ic_about"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="About"
+                    android:textSize="18sp"
+                    android:textColor="@color/black_color"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/reset_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/white_color">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/ic_reset"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Reset"
+                    android:textSize="18sp"
+                    android:textColor="@color/black_color"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </GridLayout>
+
+    <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="3"
-        android:gravity="center"
-        android:layout_marginTop="150px">
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/reset_btn"
-            android:layout_weight="1"
-            android:layout_width="0dp"
+        android:alignmentMode="alignMargins"
+        android:columnOrderPreserved="true"
+        android:rowCount="1"
+        android:columnCount="1">
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:paddingVertical="40px"
-            android:background="@drawable/border"
-            android:orientation="vertical"
-            android:gravity="center_horizontal"
-            android:text="@string/reset"
-            android:theme="@style/ThemeOverlay.AppCompat.Light"
-            android:drawableTop="@drawable/ic_add"
-            android:textAllCaps="false"/>
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/backup_btn"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:paddingVertical="40px"
-            android:background="@drawable/border"
-            android:orientation="vertical"
-            android:gravity="center_horizontal"
-            android:text="@string/backup"
-            android:theme="@style/ThemeOverlay.AppCompat.Light"
-            android:drawableTop="@drawable/ic_apps"
-            android:textAllCaps="false"/>
-    </LinearLayout>
-
+            android:orientation="horizontal"
+            android:weightSum="4"
+            android:gravity="center">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/backup_btn"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/white_color">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/ic_backup"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Backup"
+                        android:textSize="18sp"
+                        android:textColor="@color/black_color"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </GridLayout>
 </LinearLayout>

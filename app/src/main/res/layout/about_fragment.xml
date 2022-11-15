@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20px"
-        android:text="M-EXPENSE"
+        android:text="Travel App"
         android:textColor="@color/black_color"
         android:textSize="80px"
         android:textStyle="bold" />
@@ -91,27 +91,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10px"
-        android:text="Copyright © 2022 Serco Honan. All rights reserved."
-        android:textColor="@color/black_color"
-        android:textSize="40px"
-        android:textStyle="italic"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10px"
-        android:text="Create your own application for the courseworks."
-        android:textColor="@color/black_color"
-        android:textSize="40px"
-        android:textStyle="italic"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10px"
-        android:text="I know my codes so well. Be careful !!!"
+        android:text="Copyright © 2022 by Le Hoang Hiep"
         android:textColor="@color/black_color"
         android:textSize="40px"
         android:textStyle="bold|italic"/>
-
 </LinearLayout>

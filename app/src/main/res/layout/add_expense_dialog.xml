@@ -137,7 +137,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Comment"
+        android:text="Note (Optional)"
         android:textColor="@color/primary_color"
         android:textSize="15dp" />
 
@@ -146,7 +146,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:hint="Enter comment here ..."
+        android:hint="Enter note here ..."
         android:textColor="@color/black_color"
         android:textColorHint="@color/black_color"
         android:backgroundTint="@color/black_color"
@@ -177,6 +177,7 @@
             android:layout_height="wrap_content"
             android:text="Add"
             android:textAllCaps="false"
+            android:backgroundTint="@color/primary_color"
             android:textColor="@color/white_color"
             android:textSize="15dp"
             android:layout_marginLeft="10px"/>

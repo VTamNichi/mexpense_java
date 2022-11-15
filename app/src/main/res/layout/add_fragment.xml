@@ -9,6 +9,26 @@
     android:paddingBottom="20dp">
 
     <TextView
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40px"
+        android:text="Create New Trip"
+        android:textColor="@color/black_color"
+        android:textSize="80px"
+        android:textStyle="bold" />
+
+    <TextView
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40px"
+        android:text="Enter required field"
+        android:textColor="@color/primary_color"
+        android:textSize="44px"
+        android:textStyle="bold" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Trip Name"
@@ -96,7 +116,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Description"
+        android:text="Description (Optional)"
         android:textColor="@color/primary_color"
         android:textSize="15dp" />
 
@@ -115,7 +135,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Location"
+        android:text="Location (Optional)"
         android:textColor="@color/primary_color"
         android:textSize="15dp" />
 
@@ -134,7 +154,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Status"
+        android:text="Status (Optional)"
         android:textColor="@color/primary_color"
         android:textSize="15dp" />
 
@@ -173,6 +193,8 @@
         android:text="Create Trip"
         android:textAllCaps="false"
         android:textColor="@color/white_color"
-        android:textSize="15dp" />
+        android:textSize="15dp"
+        android:backgroundTint="@color/primary_color"
+        android:background="@drawable/border_button"/>
 
 </LinearLayout>
